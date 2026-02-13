@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Dashboard - ClickUp MCP</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    .app { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    header { margin-bottom: 2rem; }
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    header p { color: #94a3b8; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .stat-card {
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid;
+    }
+    .stat-card h3 { color: #94a3b8; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .stat-value { font-size: 2.5rem; font-weight: 700; }
+    .section { background: #1e293b; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; }
+    .section h2 { margin-bottom: 1rem; font-size: 1.25rem; }
+    .progress-list { display: flex; flex-direction: column; gap: 1rem; }
+    .progress-container { }
+    .progress-label { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem; }
+    .progress-bar { height: 8px; background: #334155; border-radius: 4px; overflow: hidden; }
+    .progress-fill { height: 100%; transition: width 0.3s ease; }
+    .priority-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+    .priority-item { padding: 1rem; border-radius: 6px; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .priority-item.urgent { background: rgba(239, 68, 68, 0.1); color: #fca5a5; }
+    .priority-item.high { background: rgba(249, 115, 22, 0.1); color: #fdba74; }
+    .priority-item.medium { background: rgba(234, 179, 8, 0.1); color: #fde047; }
+    .priority-item.low { background: rgba(34, 197, 94, 0.1); color: #86efac; }
+    .priority-item strong { font-size: 1.5rem; }
+    .task-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .task-item { background: #334155; padding: 1rem; border-radius: 6px; }
+    .task-item.overdue { border-left: 3px solid #ef4444; }
+    .task-name { font-weight: 600; margin-bottom: 0.5rem; }
+    .task-meta { display: flex; gap: 1rem; font-size: 0.875rem; color: #94a3b8; }
+    .priority-badge { padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .priority-badge.urgent { background: #991b1b; color: #fca5a5; }
+    .priority-badge.high { background: #9a3412; color: #fdba74; }
+    .priority-badge.medium { background: #854d0e; color: #fde047; }
+    .priority-badge.low { background: #14532d; color: #86efac; }
+    .empty-state { color: #94a3b8; text-align: center; padding: 2rem; }
+    .loading { display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 1.25rem; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
